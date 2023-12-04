@@ -1,0 +1,231 @@
+/*Estilo gerais*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: #191919;
+}
+
+/*Estilos gerais de seção*/
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 10px auto;/*o auto vai centralizar a div*/
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #CCCCCC;
+}
+
+.subtitulo {
+  font-size: 28px;
+  font-family: Poppins;
+  color: #CCCCCC;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;/*Os elementos vão ficar um abaixo do outro*/
+  justify-content: center; /*Vão ficar centralizado*/
+  align-items: center;
+  gap: 25px;
+}
+
+/*O after é filho do subtitulo*/
+.subtitulo::after{
+  content: "";
+  width: 100px;
+  height: 1px;
+  background-color: #e162ce;
+}
+
+/*Estilos de cabeçalhos*/
+
+.info-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.info-menu{
+  display: flex;
+  align-items: center;
+}
+
+.menu ul  {
+  list-style: none;/*Tira a bolinha da lista*/
+  display: flex;
+  padding: 0 10px;
+}
+
+.menu ul li {
+  padding-right: 20px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #A7A7A7;
+  transition: color 1s; /*Para a transição do hover*/
+  font-size: 20px;
+}
+
+.menu ul li a:hover {
+  color: #e162ce;
+}
+
+.mobile-menu-icon { /*Estilo para menu sanduiche*/
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #D9D9D9;
+}
+
+
+/*Seção de estilos da apresentação*/
+
+#apresentation{
+  margin: 100px 0;
+}
+
+.info-apresentation  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-apresentation h1 {
+  font-size: 58px;
+  color: #D9D9D9;
+  line-height: 66px;
+}
+
+/*degradê do texto*/
+.info-apresentation span {
+  background: linear-gradient(
+    90deg,
+    rgba(26, 127, 243, 1) 0%,
+    rgba(107, 109, 214, 1) 35%,
+    rgba(203, 36, 180, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #D9D9D9;
+}
+
+.profile-photo {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(203, 36, 180, 1) 20%,
+    rgba(26, 171, 243, 1) 100%,
+    rgba(107, 109, 214, 1) 100%
+  );
+}
+
+.profile-photo img {
+  width: 335px;
+}
+
+.info-aboutme p {
+  font-size: 19px;
+  color: #A7A7A7;
+}
+
+.info-aboutme p:nth-child(n + 2) { /*Vai estilizar a partir do segundo elemento <p>*/
+  margin: 15px 0;
+}
+
+/* Estilo da seção de tecnologias */
+#tecnologies {
+  margin: 50px 0;
+}
+
+.container-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 60px 0;
+}
+
+.container-icons img {
+  filter: grayscale(100%);
+  transition: filter 0.5s;
+}
+
+.container-icons img:hover {
+  cursor: pointer;
+  filter: grayscale(0);
+}
+
+
+
+/*Estilos de tela media*/
+
+@media screen and (max-width:1200px){ /*Temas menores q 1200px*/
+  .menu {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .mobile-menu-open {
+    display: block;
+    position: absolute;
+    top: 90px; /*ele mudou p 30px*/
+    right: 20px;
+    background-color: #333;
+    padding: 10px; 
+    border-radius: 5px; /*Arredondamento*/
+    z-index: 2;/*para o menu n ficar por baixo de nada*/
+  }
+
+  .mobile-menu-open ul {
+    flex-direction: column;
+  }
+  .mobile-menu-open li {
+    margin-bottom: 10px;
+  }
+  .mobile-menu-open a {
+    color: #fff;
+  }
+  .icons-meu {
+    display: none;
+  }
+}
+
+/*Estilo para telas pequenas*/
+@media screen and (max-width:767px) {
+  #apresentation{
+    margin: 20px o;
+  }
+  .info-apresentation{
+    flex-direction: column;
+  }
+  .info-apresentation h1 {
+    font-size: 38px;
+    line-height: 42px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .profile-photo {
+    /* margin-bottom: 20px; */
+  }
+}
